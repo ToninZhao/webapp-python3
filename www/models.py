@@ -1,6 +1,6 @@
 import time, uuid
 
-from ORM import Model, StringField, BooleanField, FloatField, TextField
+from orm import Model, StringField, BooleanField, FloatField, TextField
 
 
 def next_id():
@@ -43,10 +43,10 @@ class Comment(Model):
     created_at = FloatField(default=time.time)
 
 
-import ORM
+import orm
 from models import User, Blog, Comment
 def test():
-    yield from ORM.create_pool(user='root', password='123456', database='awesome')
+    yield from orm.create_pool(user='root', password='123456', database='awesome')
 
     u = User(name='Test', email='test@example.com', passwd='1234567890', image='about:blank')
 
